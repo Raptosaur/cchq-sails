@@ -148,9 +148,12 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      // allowOrigins: [
-      //   'https://example.com',
-      // ]
+      allowOrigins: [
+        'https://www.cchq.info',
+        'https://cchq.info',
+        'http://www.cchq.info',
+        'http://cchq.info',
+      ]
     },
 
   },
@@ -221,7 +224,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cookie: {
-      // secure: true,
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,  // 24 hours
     },
 
