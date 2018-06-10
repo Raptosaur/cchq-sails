@@ -1,54 +1,62 @@
-var https = require("https");
+var https = require("https"),
+    fs    = require("fs"),
+    util  = require("util");
 
-module.exports = function get(req, res) {
-
-  sails.log.debug('Call to API v1 Invasions');
-
+var updateInfo = function(){
   var result = {};
-
-  //
   var options = {
     host: 'corporateclash.net',
     port: 443,
     path: '/api/v1/districts/'
   };
-
   https.get(options, function(resp){
 
     let rawData = '';
 
     resp.on('data', (chunk) => { rawData += chunk; });
-
     resp.on('end', () => {
       try {
-
         const parsedData = JSON.parse(rawData);
-
-        // Add invasions
-        result.invasions = parsedData;
-
-        // Add success.
-        result.success = true;
-
+        fs.writeFile("./temp/latestData.json", JSON.stringify(parsedData), "utf8", function(){} );
       } catch (e) {
-
-        result.success = false;
-
+        throw "Error storing updated information";
       }
-
-      return res.send(result);
-
     });
-  }).on('error', function(e){
-
-    result.success = false;
-
+  }).on('error', function(e2){
     sails.log.debug('Error whilst connecting to TTCC API for update.');
-
-    return res.send(result);
-
   });
+  return result;
+};
 
+module.exports = function get(req, res) {
 
+  var result = {};
+  var latestUpdate = [];
+
+  var stats = null;
+
+  try{
+    stats = fs.statSync("./temp/latestData.json");
+  }catch(e){
+    console.log(e);
+    latestUpdate = updateInfo();
+  }
+
+  if(stats != null){
+    var mtime = new Date(stats.mtime);
+    if(new Date() - mtime > 10000){
+      latestUpdate = updateInfo();
+    }
+    result.last_update = Math.floor(mtime/1000);
+  }else{
+    result.last_update = Math.floor(new Date() / 1000);
+  }
+
+  var latestUpdate = JSON.parse(
+    fs.readFileSync("./temp/latestData.json")
+  );
+  result.invasions = latestUpdate;
+
+  return res.send(result);
 
 };
