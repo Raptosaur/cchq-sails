@@ -27,6 +27,9 @@ module.exports.routes = {
   '/': {
     view: 'pages/homepage'
   },
+  '/districts': {
+    view: 'pages/districts'
+  },
 
   /***************************************************************************
   *                                                                          *

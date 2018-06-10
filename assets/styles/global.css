@@ -26,3 +26,52 @@ nav.navbar{
 .adsbygoogle{
   margin: 0 auto;
 }
+
+.media.media-invasion {
+    text-align: left;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 4px 4px 12px #999;
+    margin-bottom: 20px;
+    transition: box-shadow .1s linear;
+    -webkit-transition: box-shadow .1s linear;
+    -moz-transition: box-shadow .1s linear;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.media.media-invasion{
+    text-align: left;
+    background-color: rgba(255,255,255,0.95);
+    box-shadow: 4px 4px 12px #999;
+    margin-bottom: 20px;
+
+    transition: box-shadow .1s linear;
+    -webkit-transition: box-shadow .1s linear;
+    -moz-transition: box-shadow .1s linear;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.media.media-invasion:hover{
+    box-shadow: 4px 4px 20px #444;
+    cursor: pointer;
+}
+.media.media-invasion .media-object{
+    max-height: 100px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.media.media-invasion .media-body{
+    padding: 10px;
+}
+.media.media-invasion .media-body > h5{
+    padding-top: 5px;
+    margin-bottom: 0px;
+}
+.media.media-invasion .media-body > p{
+    margin: 0;
+}
