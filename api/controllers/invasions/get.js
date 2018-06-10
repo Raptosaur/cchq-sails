@@ -4,7 +4,7 @@ module.exports = function get(req, res) {
 
   sails.log.debug('Call to API v1 Invasions');
 
-  var result = [];
+  var result = {};
 
   //
   var options = {
@@ -25,20 +25,14 @@ module.exports = function get(req, res) {
         const parsedData = JSON.parse(rawData);
 
         // Add invasions
-        result.push({
-          invasions: parsedData
-        });
+        result.invasions = parsedData;
 
         // Add success.
-        result.push({
-          success: true
-        });
+        result.success = true;
 
       } catch (e) {
 
-        result.push({
-          success: false
-        });
+        result.success = false;
 
       }
 
@@ -47,7 +41,7 @@ module.exports = function get(req, res) {
     });
   }).on('error', function(e){
 
-    result.push({success: false});
+    result.success = false;
 
     sails.log.debug('Error whilst connecting to TTCC API for update.');
 
