@@ -153,6 +153,7 @@ module.exports = {
         'https://cchq.info',
         'http://www.cchq.info',
         'http://cchq.info',
+        'http://node01.cchq.info',
       ]
     },
 
@@ -253,10 +254,11 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
-    //   'https://staging.example.com',
-    // ],
+    onlyAllowOrigins: [
+     'https://cchq.info',
+     'https://www.cchq.info',
+     'http://node01.cchq.info',
+    ],
 
 
     /***************************************************************************
