@@ -34,8 +34,6 @@ module.exports = function get(req, res) {
           success: true
         });
 
-        result = parsedData;
-
       } catch (e) {
 
         result.push({
