@@ -44,7 +44,7 @@ nav.navbar{
 .media.media-invasion{
     text-align: left;
     background-color: rgba(255,255,255,0.95);
-    box-shadow: 4px 4px 12px #999;
+    box-shadow: 4px 4px 12px #3d99e2;
     margin-bottom: 20px;
 
     transition: box-shadow .1s linear;
@@ -57,7 +57,7 @@ nav.navbar{
     -o-border-radius: 5px;
 }
 .media.media-invasion:hover{
-    box-shadow: 4px 4px 20px #444;
+    box-shadow: 4px 4px 20px #2c7ed0;
     cursor: pointer;
 }
 .media.media-invasion .media-object{
