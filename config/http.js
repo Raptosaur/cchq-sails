@@ -22,6 +22,8 @@ module.exports.http = {
 
   middleware: {
 
+    trustProxy: true,
+
     /***************************************************************************
     *                                                                          *
     * The order in which middleware should be run for HTTP requests.           *
