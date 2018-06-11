@@ -1,16 +1,41 @@
 <div id="maincontent" class="container">
-  <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <div class="media media-invasion">
-        <div class="pull-left">
-          <img class="media-object" src="https://via.placeholder.com/100x100">
-        </div>
-        <div class="media-body">
-          <h5 class="media-heading">Liam Lagoon</h5>
-          <p class="status">ONLINE</p>
-          <p class="toons-online">3/500 Players</p>
-        </div>
-      </div>
+  <div id="invasion-container" class="row">
+    <div class="col-sm-12" style="text-align:center;">
+      <h1 style="text-align:center;">Loading content...</h1>
     </div>
   </div>
 </div>
+
+<script>
+var updateInformation = function(){
+  $.get({
+    url: "/api/v1/invasion",
+    cache: false
+  }).then(function(data){
+    $("#invasion-container").html('');
+    data.invasions.forEach(function(elem){
+      var html = "<div class=\"col-md-4 col-sm-6\">"+
+        "<div class=\"media media-invasion\">"+
+          "<div class=\"pull-left\">"+
+            "<img class=\"media-object\" src=\"https://via.placeholder.com/100x100\">"+
+          "</div>"+
+          "<div class=\"media-body\">"+
+            "<h5 class=\"media-heading\">"+elem.name+"</h5>"+
+            "<p class=\"status\">"+
+              (elem.online ? "ONLINE" : "OFFLINE")+
+            "</p>"+
+            "<p class=\"toons-online\">"+elem.population+"/500 Players</p>"+
+          "</div>"+
+        "</div>"+
+      "</div>";
+      $("#invasion-container").append(html);
+    });
+  });
+};
+window.onload = function(e){
+  updateInformation();
+}
+setInterval(function(){
+  updateInformation();
+}, 5000);
+</script>
