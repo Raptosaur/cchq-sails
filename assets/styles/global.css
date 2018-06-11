@@ -76,3 +76,6 @@ nav.navbar{
 .media.media-invasion .media-body > p{
     margin: 0;
 }
+.homepage img{
+  max-width: 100%;
+}
