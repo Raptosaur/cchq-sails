@@ -24,14 +24,14 @@
         </button>
         <div class="collapse navbar-collapse my-2" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item<% if(req.path == '/'){ %> active<% } %>">
+              <a class="nav-link" href="/">Home<% if(req.path == '/'){ %> <span class="sr-only">(current)</span><% } %></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/districts">Districts</a>
+            <li class="nav-item<% if(req.path == '/districts'){ %> active<% } %>">
+              <a class="nav-link" href="/districts">Districts<% if(req.path == '/districts'){ %> <span class="sr-only">(current)</span><% } %></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/api">API</a>
+            <li class="nav-item<% if(req.path == '/api'){ %> active<% } %>">
+              <a class="nav-link" href="/api">API<% if(req.path == '/api'){ %> <span class="sr-only">(current)</span><% } %></a>
             </li>
           </ul>
         </div>
