@@ -22,9 +22,10 @@ var updateInformation = function(){
           "<div class=\"media-body\">"+
             "<h5 class=\"media-heading\">"+elem.name+"</h5>"+
             "<p class=\"status\">"+
-              (elem.online ? "ONLINE" : "OFFLINE")+
+              (elem.online ? "<span class=\"text-success\">ONLINE</span>" :
+                "<span class=\"text-danger\">OFFLINE</span>")+
             "</p>"+
-            "<p class=\"toons-online\">"+elem.population+"/500 Players</p>"+
+            "<p class=\"toons-online\">"+elem.population+"/500 players</p>"+
           "</div>"+
         "</div>"+
       "</div>";
