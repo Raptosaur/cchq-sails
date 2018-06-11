@@ -131,3 +131,4 @@ lib-cov
 *.pid
 
 temp/latestData.json
+temp/latestData.json

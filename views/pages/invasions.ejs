@@ -1,0 +1,47 @@
+<div id="maincontent" class="container">
+  <div id="invasion-container" class="row">
+    <div class="col-sm-12" style="text-align:center;">
+      <h1 style="text-align:center;">Loading content...</h1>
+    </div>
+  </div>
+</div>
+
+<script>
+var updateInformation = function(){
+  $.get({
+    url: "/api/v1/invasion",
+    cache: false
+  }).then(function(data){
+    $("#invasion-container").html('');
+    var inv_count = 0;
+    data.invasions.forEach(function(elem){
+      if(elem.cogs_attacking !== "None"){
+        var cog_url = "/images/cogs/"+elem.cogs_attacking.toLowerCase().replace(" ", "_")+".png";
+        var html = "<div class=\"col-md-4 col-sm-6\">"+
+            "<div class=\"media media-invasion\">"+
+              "<div class=\"pull-left\">"+
+                "<img class=\"media-object\" src=\""+cog_url+"\">"+
+              "</div>"+
+              "<div class=\"media-body\">"+
+                "<h5 class=\"media-heading\">"+elem.cogs_attacking+"</h5>"+
+                "<p class=\"status\">"+elem.name+"</p>"+
+                "<p class=\"cogs-remaining\">"+elem.count_defeated+"/"+elem.count_total+" cogs</p>"+
+              "</div>"+
+            "</div>"+
+          "</div>";
+          $("#invasion-container").append(html);
+          inv_count++;
+      }
+    });
+    if(inv_count == 0){
+      $("#invasion-container").html('<div class="col-sm-12" style="text-align:center;"><h1 style="text-align:center;">There are currently no invasions.</h1></div>');
+    }
+  });
+};
+window.onload = function(e){
+  updateInformation();
+}
+setInterval(function(){
+  updateInformation();
+}, 5000);
+</script>

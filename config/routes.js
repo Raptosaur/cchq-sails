@@ -30,6 +30,9 @@ module.exports.routes = {
   '/districts': {
     view: 'pages/districts'
   },
+  '/invasions': {
+    view: 'pages/invasions'
+  },
 
   /***************************************************************************
   *                                                                          *

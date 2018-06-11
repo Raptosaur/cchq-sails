@@ -23,9 +23,12 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse my-2" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item<% if(req.path == '/'){ %> active<% } %>">
               <a class="nav-link" href="/">Home<% if(req.path == '/'){ %> <span class="sr-only">(current)</span><% } %></a>
+            </li>
+            <li class="nav-item<% if(req.path == '/invasions'){ %> active<% } %>">
+              <a class="nav-link" href="/invasions">Invasions<% if(req.path == '/invasions'){ %> <span class="sr-only">(current)</span><% } %></a>
             </li>
             <li class="nav-item<% if(req.path == '/districts'){ %> active<% } %>">
               <a class="nav-link" href="/districts">Districts<% if(req.path == '/districts'){ %> <span class="sr-only">(current)</span><% } %></a>
