@@ -79,3 +79,34 @@ nav.navbar{
 .homepage img{
   max-width: 100%;
 }
+.tip-card{
+  background-color: rgba(247, 247, 247, 0.85);
+  margin-top: 20px;
+  padding: 15px 0 0 0;
+  text-align: center;
+  border-radius: 5px;
+}
+.tip-card table {
+    width: 100%;
+    margin-top: 20px;
+}
+.tip-card table thead th {
+    text-align: center;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 1.1em;
+}
+.tip-card table tr td {
+    border: 2px solid rgb(206, 204, 201);
+    border-bottom: none;
+    text-align: center;
+    padding: 7px;
+}
+.tip-card table tr td:first-child {
+  border-left: none;
+}
+.tip-card table.cog-hp-values tr td:first-child{
+  font-weight: bold;
+}
+.tip-card table tr td:last-child {
+    border-right: none;
+}
