@@ -7,26 +7,21 @@ body{
 nav.navbar{
   box-shadow: 0px 0px 80px 10px #2c7ed0;
 }
-
 #maincontent{
   margin-top: 50px;
   color: #333333;
 }
-
 #maincontent h1,#maincontent h2, #maincontent h3, #maincontent h4, #maincontent h5, #maincontent h6{
   font-family: 'Luckiest Guy', sans-serif;
 }
-
 .homepage{
   padding: 1em;
-  background: #f7f7f7;
+  background: rgba(247, 247, 247, 0.85);
   border-radius: 10px;
 }
-
 .adsbygoogle{
   margin: 0 auto;
 }
-
 .media.media-invasion {
     text-align: left;
     background-color: rgba(255,255,255,0.95);
@@ -40,7 +35,6 @@ nav.navbar{
     -webkit-border-radius: 5px;
     -o-border-radius: 5px;
 }
-
 .media.media-invasion{
     text-align: left;
     background-color: rgba(255,255,255,0.95);
@@ -81,7 +75,6 @@ nav.navbar{
 }
 .tip-card{
   background-color: rgba(247, 247, 247, 0.85);
-  margin-top: 20px;
   padding: 15px 0 0 0;
   text-align: center;
   border-radius: 5px;
